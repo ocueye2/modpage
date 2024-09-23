@@ -1,1 +1,1 @@
-Dont mess with the docker files, only edit the .zip and html file in the forward directory
+Dont mess with the docker files, only edit the .zip and html file in the html directory
