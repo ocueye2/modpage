@@ -13,9 +13,6 @@ RUN pip install --no-cache-dir cherrypy
 # Make port 90 available to the world outside this container
 EXPOSE 90
 
-# Define environment variable
-ENV PYTHONUNBUFFERED 1
-
 # Run app.py when the container launches
 CMD ["python", "app.py"]
 
