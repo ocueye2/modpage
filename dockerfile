@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Use an official Python runtime as a parent image
 FROM python:3.10-slim
 
@@ -19,7 +18,7 @@ ENV PYTHONUNBUFFERED 1
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
-=======
+
 # Use the official Nginx image
 FROM nginx:alpine
 
@@ -28,4 +27,3 @@ COPY html /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 90
->>>>>>> 950bd7a10074a3d954ac79350f36d56dc07088f3
