@@ -1,29 +1,19 @@
-# Use an official Python runtime as a parent image
-FROM python:3.10-slim
+# Start with your base image
+FROM  python:3.12.3-slim
 
 # Set the working directory in the container
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copy the current directory contents into the container at /usr/src/app
-COPY . .
+# Copy the requirements file into the container at /app
+COPY requirements.txt .
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir cherrypy
+RUN pip install cherrypy
+# Copy the rest of your application code into the container at /app
+COPY . .
 
-# Make port 90 available to the world outside this container
-EXPOSE 90
-
-# Define environment variable
-ENV PYTHONUNBUFFERED 1
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
-
-# Use the official Nginx image
-FROM nginx:alpine
-
-# Copy the 404 error page
-COPY html /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 90
