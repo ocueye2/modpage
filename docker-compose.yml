@@ -1,6 +1,6 @@
 # v5
 services:
   web:
-    build: .
+    build: python:3.12.3-slim
     ports:
       - "90:90"
